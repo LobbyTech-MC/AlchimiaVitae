@@ -1,85 +1,33 @@
-# AlchimiaVitae - 炼金术自传
+# Alchimia Vitae
+Slimefun addon that adds some alchemy, herbalism and other mechanics to the game  
+(My entry to the [2021 Slimefun Addon Jam](https://github.com/Slimefun/Slimefun4/wiki/Addon-Jam-2021))
 
-粘液科技附属，添加了一些魔法，炼金，草药物品。
+**Requires Slimefun RC-28 or above, Minecraft 1.17 or above, and Java 16 or above!**
 
-该附属为作者的**2021 Slimefun Addon Jam**参赛作品。
+Click below to download
 
-## 下载
+[![Build status](https://thebusybiscuit.github.io/builds/Apeiros-46B/AlchimiaVitae/master/badge.svg)](https://thebusybiscuit.github.io/builds/Apeiros-46B/AlchimiaVitae/master/)
 
-**自动更新**: 汉化版构建#1及以后版本包含自动更新功能，默认开启。
+## Features
+Check the Slimefun guide for more information
 
-点击这里下载 AlchimiaVitae: [下载 AlchimiaVitae](https://builds.guizhanss.net/ybw0014/AlchimiaVitae/master)
+### Tools and Resources
+- Soul Collector
+  - Drops more experience from mobs
+  - Has a chance to drop a Condensed Soul, a crafting ingredient, when killing a mob
+- Plants of Dark and Light Magic
+  - Used as a crafting ingredient for potions and other resources
+  - Created by infusing saplings with either Condensed Souls or Magical Lumps
 
-<p align="center">
-  <a href="https://github.com/ybw0014/AlchimiaVitae/actions/workflows/maven.yml">
-    <img src="https://github.com/ybw0014/AlchimiaVitae/actions/workflows/maven.yml/badge.svg" alt="Java CI"/>
-  </a>
-  <a href="https://builds.guizhanss.net/ybw0014/AlchimiaVitae/master">
-    <img src="https://builds.guizhanss.net/f/ybw0014/AlchimiaVitae/master/badge.svg" alt="Build status"/>
-  </a>
-</p>
-
-### 特性:
-
-- 光与暗魔法植物
-  - 用于酿造药水
-  - 用于制造暗钢锭，光明锭，以及神秘金属锭
-  - 使用灵魂或魔法精华注入橡树树苗获得
-- 神圣祭坛
-  - 用于制造高级物品
-  - 可以制作金属
-  - 可以将不同种类的生命变成压缩碳
-- 华丽炼药锅
-  - 用于酿造强力的药水
-    - 仁慈酿造与恶毒混合物
-- 注入祭坛
-  - 可以向工具、武器、防具注入强力的魔法
-  - 每个装备仅能选择一种注入魔法，不能同时添加多种注入魔法
-- 渗透药水
-  - 可以吸收你身上所有的药水效果
-  - 使用华丽炼药锅酿造
-
-
-### 注入列表:
-- 毁灭暴击
-  - 适用装备: 斧
-  - 效果: 暴击时，
-    - 有 1/20 的几率使目标获得 8 秒挖掘疲劳 III 效果
-    - 有 1/5 的几率使目标获得 15 秒缓慢 I 效果
-    - 有 1/5 的几率使目标获得 15 秒虚弱 I 效果
-    - 对目标的护甲造成额外 0-5 点伤害
-- 幻影暴击
-  - 适用装备: 斧
-  - 效果:
-    - 暴击时, 有 1/4 的几率造成额外伤害,无视护甲。该额外伤害为你的攻击伤害的1.15次方的0.625倍。
-- 自瞄
-  - 适用装备: 弓，弩
-  - 效果:
-    - 箭矢不受重力影响
-- 强力
-  - 适用装备: 弓，弩
-  - 效果:
-    - 箭矢拥有2倍射程与速度
-- 治疗
-  - 适用装备: 弓，弩
-  - 效果:
-    - 将治疗目标而不会造成伤害
-- 挥发
-  - 适用装备: 弓，弩
-  - 效果:
-    - 有 1/7 的几率射出一个大火球取代箭矢，不会破坏地形，不会让方块起火
-    - 如果没有射出大火球，则会射出一个小火球，不会破坏地形，不会让方块起火
-- 自动补种
-  - 适用装备: 锄
-  - 效果:
-    - 当收割完全生长的作物时，会自动补种，不会消耗种子
-- 图腾电池
-  - 适用装备: 胸甲
-  - 效果:
-    - 允许存储最多8个不死图腾，在濒死时使用并消耗
-    - 手持不死图腾 Shift+右键 来添加图腾
-- 击退
-  - 适用装备: 钓竿
-  - 效果:
-    - 当使用注入该魔法的钓竿拉回玩家时，将会击退玩家
-    - 该注入钓竿的射程为普通钓竿的2倍
+### Crafters
+- Divine Altar
+  - Used for crafting of advanced items
+  - Used for transmuting items into other products, allowing slightly easier but not automatable crafting of materials such as Reinforced Alloy Ingots
+- Ornate Cauldron
+  - Used to create powerful potions
+    - Benevolent Brew, a strong beneficial potion
+    - Malevolent Concoction, a strong harmful splash potion
+    - Potion of Osmosis, a potion that absorbs your current effects when you drink it
+- Altar of Infusion
+  - Allows you to infuse tools and weapons with powerful effects called infusions
+  - Infusions are not compatible with each other, you must choose wisely

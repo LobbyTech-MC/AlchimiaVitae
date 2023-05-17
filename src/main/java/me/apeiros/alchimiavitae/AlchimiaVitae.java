@@ -13,7 +13,7 @@ public class AlchimiaVitae extends AbstractAddon {
     private static AlchimiaVitae instance;
 
     public AlchimiaVitae() {
-        super("Apeiros-46B", "AlchimiaVitae", "master", "options.auto-update");
+        super("ybw0014", "AlchimiaVitae", "master", "options.auto-update");
     }
 
     @Override

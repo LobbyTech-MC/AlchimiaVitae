@@ -32,14 +32,13 @@ public class SoulCollector extends SlimefunItem {
     // {{{ Handler to prevent use on players
     @Nonnull
     private WeaponUseHandler getWeaponUseHandler() {
-        return (e, p, item) -> {
-            if (!(e.getEntity() instanceof Player))
-                return;
-
-            // The Soul Collector cannot be used on players
-            e.setCancelled(true);
-            p.sendMessage(AlchimiaUtils.format("<red>You cannot hurt a player using the Soul Collector!"));
-            p.playSound(p.getLocation(), Sound.BLOCK_GLASS_BREAK, 1, 1);
+        return (e, p, i) -> {
+            if (e.getEntity() instanceof Player) {
+                // The Soul Collector cannot be used on players
+                e.setCancelled(true);
+                p.sendMessage(Utils.legacySerialize("<red>你不能对玩家使用灵魂收集者!"));
+                p.playSound(p.getLocation(), Sound.BLOCK_GLASS_BREAK, 1, 1);
+            }
         };
     }
     // }}}

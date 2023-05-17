@@ -1,92 +1,104 @@
 options:
-  # Whether or not to automatically update
+  # 是否启用自动更新
   auto-update: true
 
-  # Options for Infusions
+  # 注入选项
   infusions:
-    # Enable or disable specific Infusions (true = enabled, false = disabled)
+    ## 是否开启指定的注入 (true = 启用, false = 禁用)
+
+    # 毁灭暴击
     infusion-destructivecrits: true
+    # 幻影暴击
     infusion-phantomcrits: true
+    # 自瞄
     infusion-trueaim: true
+    # 强力
     infusion-forceful: true
+    # 挥发
     infusion-volatile: true
+    # 治疗
     infusion-healing: true
+    # 自动补种
     infusion-autoreplant: true
+    # 图腾电池
     infusion-totemstorage: true
+    # 击退
     infusion-knockback: true
 
-  # Options for transmutations
+  # 演变选项
   transmutations:
-    # Enable or disable specific transmutations (true = enabled, false = disabled)
+    ## 是否开启指定的演变 (true = 启用, false = 禁用)
+
+    # 强化合金锭
     reinforced-transmutation: true
+    # 硬化金属
     hardened-transmutation: true
+    # 钢锭
     steel-transmutation: true
+    # 大马士革钢锭
     damascus-transmutation: true
+    # 压缩碳
     compressed-carbon-transmutation: true
-    # Whether or not the display items in the Slimefun Guide should use the same
-    # custom model data as the real Slimefun items that will be crafted
+
+    # 是否使用Slimefun中对应物品的CustomModelData用于显示材质包，合成物品
+    # 不建议关闭
     use-same-custommodeldata: true
 
-  # Options for potions
+  # 药水选项
   potions:
-    # Options for the Benevolent Brew potion
+    # 仁慈酿造
     benevolent-brew:
-      # Effect configurations
-      # NOTE: To set the duration of the potions in seconds, multiply the amount of seconds by 20 and put that value in
+      # 药水配置
+      # 注意: 药水持续时间的单位为 Minecraft tick, 即 1 秒 = 20 tick，将持续时长秒数乘20可以得到tick
+
+      # 抗性提升
       resistance:
-        # How many game ticks (there are 20 game ticks in a second) the effect should last
         ticks: 6000
-        # The level of the effect (resistance 5 and above will make players completely immune to damage)
+        # 抗性提升5以及更高等级将使得玩家免疫几乎所有伤害
         level: 1
+      # 急迫
       haste:
-        # How many game ticks (there are 20 game ticks in a second) the effect should last
         ticks: 6000
-        # The level of the effect
         level: 2
+      # 生命回复
       regen:
-        # How many game ticks (there are 20 game ticks in a second) the effect should last
         ticks: 6000
-        # The level of the effect
         level: 2
+      # 速度
       speed:
-        # How many game ticks (there are 20 game ticks in a second) the effect should last
         ticks: 6000
-        # The level of the effect
         level: 2
+      # 跳跃提升
       jump:
-        # How many game ticks (there are 20 game ticks in a second) the effect should last
         ticks: 6000
-        # The level of the effect
         level: 2
 
-      # How many half hearts of absorption to grant upon consuming the potion (has to be in this format: 0.0, 1.0, etc.)
+      # 饮用时获得多少点额外生命值 (黄色部分血条，1点为半颗心)
+      # 必须为小数格式，即: 0.0, 1.0 等
       absorption-halfhearts: 0.0
-    # Options for the Malevolent Concoction splash potion
+
+    # 恶毒混合物
     malevolent-concoction:
-      # Effect configurations
-      # NOTE: To set the duration of the potions in seconds, multiply the amount of seconds by 20 and put that value in
+      # 药水配置
+      # 注意: 药水持续时间的单位为 Minecraft tick, 即 1 秒 = 20 tick，将持续时长秒数乘20可以得到tick
+
+      # 虚弱
       weakness:
-        # How many game ticks (there are 20 game ticks in a second) the effect should last
         ticks: 6000
-        # The level of the effect
         level: 3
+      # 缓慢
       slowness:
-        # How many game ticks (there are 20 game ticks in a second) the effect should last
         ticks: 3000
-        # The level of the effect
         level: 2
+      # 中毒
       poison:
-        # How many game ticks (there are 20 game ticks in a second) the effect should last
         ticks: 600
-        # The level of the effect
         level: 2
+      # 失明
       blindness:
-        # How many game ticks (there are 20 game ticks in a second) the effect should last
         ticks: 1200
-        # The level of the effect
         level: 1
+      # 饥饿
       hunger:
-        # How many game ticks (there are 20 game ticks in a second) the effect should last
         ticks: 600
-        # The level of the effect
         level: 2

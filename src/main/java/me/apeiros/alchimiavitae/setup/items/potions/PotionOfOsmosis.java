@@ -37,79 +37,65 @@ public class PotionOfOsmosis extends AbstractListenerPotion {
     public void onDrink(PlayerItemConsumeEvent e) {
         ItemStack potion = e.getItem();
 
-        // Make sure the potion is similar to this one
-        if (!this.isSimilar(potion))
-            return;
-
-        // Cancel the event to prevent the potion from being consumed normally
-        e.setCancelled(true);
-
-        Player p = e.getPlayer();
-        Collection<PotionEffect> effects = p.getActivePotionEffects();
-
-        // Make sure the player has effects
-        if (p.getActivePotionEffects().isEmpty()) {
-            p.sendMessage(AlchimiaUtils.format("<red>There are no effects to absorb!"));
-            return;
-        }
-
-        // Consume Potion of Osmosis
-        p.getInventory().removeItem(potion);
-
-        // Remove the player's potion effects
-        for (PotionEffect effect : effects) {
-            p.removePotionEffect(effect.getType());
-        }
-
-        // Make a new potion
-        ItemStack newPotion = AlchimiaUtils.makePotion(
-                "AV_CORUSCATING_POTION",
-                AlchimiaUtils.format("<gradient:#6fe3e1:#53e6a6>Coruscating Potion</gradient>"),
-                Color.FUCHSIA, effects, false,
-                "&aCreated from a",
-                AlchimiaUtils.format("<gradient:#6274e7:#8752a3>Potion of Osmosis</gradient>"),
-                "", AlchimiaUtils.itemType("Potion"));
-
-        // {{{ Finish
-        new BukkitRunnable() {
-            private int layer = 2;
-
-            @Override
-            public void run() {
-                World w = p.getWorld();
-                Location l = p.getLocation();
-
-                if (layer == 2) {
-                    // Effects
-                    w.playSound(l, Sound.BLOCK_BREWING_STAND_BREW, 1, 1);
-
-                    // Decrease layer
-                    layer--;
-                } else if (layer == 1) {
-                    // Effects
-                    w.playSound(l, Sound.BLOCK_BEACON_ACTIVATE, 1, 1);
-
-                    // Decrease layer
-                    layer--;
-                } else {
-                    // Effects
-                    w.playSound(l, Sound.ITEM_BOTTLE_FILL_DRAGONBREATH, 1, 1);
-                    w.playSound(l, Sound.ITEM_BOTTLE_FILL, 1, 1);
-                    w.playSound(l, Sound.ITEM_TOTEM_USE, 0.6F, 1);
-                    w.spawnParticle(Particle.END_ROD, l, 60, 1, 1, 1);
-
-                    // Add potion to player's inventory
-                    if (!p.getInventory().addItem(newPotion).isEmpty()) {
-                        // Drop it on the ground if no inventory space
-                        w.dropItemNaturally(l, newPotion);
-                    }
-
-                    // Cancel runnable
-                    this.cancel();
-                }
+            // If player has no effects
+            if (p.getActivePotionEffects().isEmpty()) {
+                p.sendMessage(Utils.legacySerialize("<red>你身上没有任何药水效果!"));
+                return;
             }
-        }.runTaskTimer(AlchimiaVitae.i(), 0, 30);
-        // }}}
+
+            // Collection of player's effects
+            Collection<PotionEffect> playerEffectsList = p.getActivePotionEffects();
+
+            // Remove the player's current potion effects
+            for (PotionEffect eff : playerEffectsList) {
+                p.removePotionEffect(eff.getType());
+            }
+
+            // Make a new potion
+            ItemStack newPotion = Utils.makePotion(
+                "AV_CORUSCATING_POTION_POTION",
+                Utils.legacySerialize("<gradient:#6fe3e1:#53e6a6>闪烁的药水</gradient>"),
+                Color.FUCHSIA,
+                playerEffectsList
+            );
+            PotionMeta meta = (PotionMeta) newPotion.getItemMeta();
+
+            // Make a lore
+            List<String> lore = new ArrayList<>();
+            lore.add(Utils.legacySerialize("<green>由<gradient:#6274e7:#8752a3>渗透药水</gradient><green>制成"));
+
+            // Set the lore
+            meta.setLore(lore);
+
+            // Set item meta
+            newPotion.setItemMeta(meta);
+
+            // Remove potion of osmosis
+            p.getInventory().removeItem(potion);
+            
+            // Effects
+            // Layer 0
+            p.getWorld().playSound(p.getLocation(), Sound.BLOCK_BREWING_STAND_BREW, 1, 1);
+
+            // Layer 1
+            Bukkit.getScheduler().runTaskLater(AlchimiaVitae.i(), () -> {
+                p.getWorld().playSound(p.getLocation(), Sound.BLOCK_BEACON_ACTIVATE, 1, 1);
+
+                // Layer 2
+                Bukkit.getScheduler().runTaskLater(AlchimiaVitae.i(), () -> {
+                    p.getWorld().playSound(p.getLocation(), Sound.ITEM_BOTTLE_FILL_DRAGONBREATH, 1, 1);
+                    p.getWorld().playSound(p.getLocation(), Sound.ITEM_BOTTLE_FILL, 1, 1);
+                    p.getWorld().playSound(p.getLocation(), Sound.ITEM_TOTEM_USE, 0.6F, 1);
+                    p.getWorld().spawnParticle(Particle.END_ROD, p.getLocation(), 60, 1, 1, 1);
+
+                    // Message
+                    p.sendMessage(Utils.legacySerialize("<green>已将你身上的药水效果制作成药水瓶!"));
+
+                    // Add new potion
+                    p.getInventory().addItem(newPotion);
+                }, 30);
+            }, 30);
+        };
     }
     // }}}
 

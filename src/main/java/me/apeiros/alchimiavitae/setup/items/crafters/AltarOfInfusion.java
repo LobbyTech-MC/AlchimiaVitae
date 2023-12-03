@@ -79,11 +79,11 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
         boolean knockbackEnabled        = cfg.getBoolean("options.infusions.infusion-knockback");
 
         // Create placeholder items
-        CustomItemStack validMelee      = new CustomItemStack(Material.DIAMOND_SWORD, "&a&oA gold, iron, diamond,", "&a&oor netherite axe or sword");
-        CustomItemStack validRanged     = new CustomItemStack(Material.BOW, "&a&oA bow or crossbow");
-        CustomItemStack validHoe        = new CustomItemStack(Material.DIAMOND_HOE, "&a&oA gold, iron, diamond,", "&a&oor netherite hoe");
-        CustomItemStack validChestplate = new CustomItemStack(Material.DIAMOND_CHESTPLATE, "&a&oA gold, iron, diamond, or", "&a&onetherite chestplate");
-        CustomItemStack validFishingRod = new CustomItemStack(Material.FISHING_ROD, "&a&oA fishing rod");
+        CustomItemStack validMelee      = new CustomItemStack(Material.DIAMOND_SWORD, "&a&o一把金、铁、钻石", "&a&o或下界合金制的剑或斧头");
+        CustomItemStack validRanged     = new CustomItemStack(Material.BOW, "&a&o一把弓或弩");
+        CustomItemStack validHoe        = new CustomItemStack(Material.DIAMOND_HOE, "&a&o一把金、铁、钻石,", "&a&o或下界合金制的锄头");
+        CustomItemStack validChestplate = new CustomItemStack(Material.DIAMOND_CHESTPLATE, "&a&o一把金、铁、钻石或", "&a&o下界合金制的胸甲");
+        CustomItemStack validFishingRod = new CustomItemStack(Material.FISHING_ROD, "&a&o一把钓鱼竿");
 
         // Get ItemGroup and RecipeType
         ItemGroup ig = AlchimiaUtils.ItemGroups.INFUSIONS;
@@ -261,7 +261,7 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
 
         // Make sure the recipe is valid
         if (infusion == null) {
-            p.sendMessage(AlchimiaUtils.format("<red>That recipe is invalid!"));
+            p.sendMessage(AlchimiaUtils.format("<red>配方不存在!"));
             return;
         }
         // }}}
@@ -273,13 +273,13 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
 
         // Make sure there is a tool
         if (tool == null || meta == null || tool.getType().equals(Material.AIR)) {
-            p.sendMessage(AlchimiaUtils.format("<red>There is nothing to infuse!"));
+            p.sendMessage(AlchimiaUtils.format("<red>无效的注入!"));
             return;
         }
 
         // Make sure the tool is valid
         if (!Infusion.ANY.canApply(tool)) {
-            p.sendMessage(AlchimiaUtils.format("<red>You cannot infuse that item!"));
+            p.sendMessage(AlchimiaUtils.format("<red>你不能注入该物品!"));
             return;
         }
 
@@ -287,13 +287,13 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
 
         // Make sure the tool is not already infused
         if (Infusion.ANY.has(pdc)) {
-            p.sendMessage(AlchimiaUtils.format("<red>This item already has an infusion!"));
+            p.sendMessage(AlchimiaUtils.format("<red>这个物品已经有注入了!"));
             return;
         }
 
         // Make sure the infusion is applicable to the tool
         if (!infusion.canApply(tool)) {
-            p.sendMessage(AlchimiaUtils.format("<red>You cannot apply that infusion to this item!"));
+            p.sendMessage(AlchimiaUtils.format("<red>你不能把它注入到这个物品!"));
             return;
         }
         // }}}
@@ -305,7 +305,7 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
         List<String> lore = meta.getLore() != null ? meta.getLore() : new ArrayList<>();
 
         lore.add("");
-        lore.add(AlchimiaUtils.format("<gray>Infusion:"));
+        lore.add(AlchimiaUtils.format("<gray>注入:"));
 
         // Infusion name to lore
         lore.add(AlchimiaUtils.format("<dark_gray>› " + infusion.lore()));
@@ -401,46 +401,52 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
         // {{{ Melee weapons
         DESTRUCTIVE_CRITS(
                 "infusion_destructivecrits",
-                "<red><bold>Destructive Criticals",
+                "<red><bold>毁灭暴击",
 
-                new SlimefunItemStack("AV_DESTRUCTIVE_CRITS_INFUSION", Material.TNT, "&c&lDestructive Criticals",
-                        "&4Grants a small chance to give your opponent",
-                        "&4negative status effects on a critical hit,",
-                        "&4as well as deal additional damage to armor.")),
+                new SlimefunItemStack("AV_DESTRUCTIVE_CRITS_INFUSION", Material.TNT, "&c&l毁灭暴击",
+                		"&4暴击时:",
+                        "&4- 有 1/20 的几率使目标获得 8 秒挖掘疲劳 III 效果",
+                        "&4- 有 1/5 的几率使目标获得 15 秒缓慢 I 效果",
+                        "&4- 有 1/5 的几率使目标获得 15 秒虚弱 I 效果",
+                        "&4- 对目标的护甲造成额外 0-5 点伤害")),
 
         PHANTOM_CRITS (
                 "infusion_phantomcrits",
-                "<aqua>Phantom Criticals",
+                "<aqua>幻影暴击",
 
-                new SlimefunItemStack("AV_PHANTOM_CRITS_INFUSION", Material.PHANTOM_MEMBRANE, "&bPhantom Criticals",
-                        "&7Grants a small chance to deal extra damage",
-                        "&7on a critical hit, which bypasses armor")),
+                new SlimefunItemStack("AV_PHANTOM_CRITS_INFUSION", Material.PHANTOM_MEMBRANE, "&b幻影暴击",
+                        "&7暴击时,有小概率造成",
+                        "&7额外伤害,无视护甲")),
         // }}}
 
         // {{{ Ranged weapons
         FORCEFUL(
                 "infusion_forceful",
-                "<dark_green>Forceful",
+                "<dark_green>强力",
 
-                new SlimefunItemStack("AV_FORCEFUL_INFUSION", Material.PISTON, "&2Forceful",
-                        "&2Grants the ability to fire arrows that",
-                        "&2travel further and deal more damage")),
+                new SlimefunItemStack("AV_FORCEFUL_INFUSION", Material.PISTON, "&2强力",
+                		"&a该注入魔法将使用机械设备与电磁铁",
+                        "&a来加速弹射物",
+                        "&a箭矢将获得2倍射程与额外伤害")),
 
         HEALING(
                 "infusion_healing",
-                "<red>Healing",
+                "<red>治疗",
 
-                new SlimefunItemStack("AV_HEALING_INFUSION", Material.REDSTONE, "&cHealing",
-                        "&cGrants the ability to heal hit",
-                        "&ctargets instead of harming them")),
+                new SlimefunItemStack("AV_HEALING_INFUSION", Material.REDSTONE, "&c治疗",
+                		"&c该注入魔法可以治疗目标",
+                        "&c且不会造成伤害",
+                        "&a治疗量与伤害相同")),
 
         TRUE_AIM(
                 "infusion_trueaim",
-                "<light_purple>True Aim",
+                "<light_purple>自瞄",
 
-                new SlimefunItemStack("AV_TRUE_AIM_INFUSION", Material.SHULKER_SHELL, "&dTrue Aim",
-                        "&5Grants the ability to fire arrows",
-                        "&5that are not affected by gravity")),
+                new SlimefunItemStack("AV_TRUE_AIM_INFUSION", Material.SHULKER_SHELL, "&d自瞄",
+                		"&5使用来自潜影壳的漂浮魔法",
+                        "&5来处决目标",
+                        "&5注入该魔法的弓将射出",
+                        "&5不受重力影响的箭矢")),
 
         VOLATILITY(
                 "infusion_volatile",

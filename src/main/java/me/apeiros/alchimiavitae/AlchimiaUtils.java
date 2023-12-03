@@ -44,27 +44,27 @@ public class AlchimiaUtils {
 
         public static final RecipeType SOUL_COLLECTOR = new RecipeType(
                 AbstractAddon.createKey("soul_collector_type"), AlchimiaItems.SOUL_COLLECTOR,
-                "", "&b&oExtract using the Soul Collector");
+                "", "&b&o使用灵魂收割者来收集");
 
         public static final RecipeType PLANT_INFUSION_CHAMBER = new RecipeType(
                 AbstractAddon.createKey("plant_infusion_chamber_type"), AlchimiaItems.PLANT_INFUSION_CHAMBER,
-                "", "&b&oInfuse using the Plant Infusion Chamber");
+                "", "&b&o使用植物注入仓来注入");
 
         public static final RecipeType EXP_CRYSTALLIZER = new RecipeType(
                 AbstractAddon.createKey("exp_crystallizer_type"), AlchimiaItems.EXP_CRYSTALLIZER,
-                "", "&b&oCrystallize using the Experience Crystallizer");
+                "", "&b&o使用经验结晶器来制作");
 
         public static final RecipeType DIVINE_ALTAR = new RecipeType(
                 AbstractAddon.createKey("divine_altar_type"), AlchimiaItems.DIVINE_ALTAR,
-                "", "&b&oFabricate using the Divine Altar");
+                "", "&b&o使用神圣祭坛进行合成");
 
         public static final RecipeType COSMIC_CAULDRON = new RecipeType(
                 AbstractAddon.createKey("cosmic_cauldron_type"), AlchimiaItems.COSMIC_CAULDRON,
-                "", "&b&oBrew using the Cosmic Cauldron");
+                "", "&b&o使用华丽炼药锅进行酿造");
 
         public static final RecipeType INFUSION_ALTAR = new RecipeType(
                 AbstractAddon.createKey("infusion_altar_type"), AlchimiaItems.ALTAR_OF_INFUSION,
-                "", "&b&oInfuse using the Altar of Infusion");
+                "", "&b&o使用注入祭坛进行注入");
 
     }
     // }}}
@@ -78,19 +78,19 @@ public class AlchimiaUtils {
 
         public static final ItemGroup GENERAL = new SubGroup(
                 "av_general",
-                new CustomItemStack(Material.ENCHANTED_BOOK, "&6Alchimia Vitae &7- &2General"));
+                new CustomItemStack(Material.ENCHANTED_BOOK, "&6炼金术自传 &7- &2普通"));
 
         public static final ItemGroup ALTAR_RECIPES = new SubGroup(
                 "av_altar_recipes",
-                new CustomItemStack(Material.ENCHANTING_TABLE, "&6Alchimia Vitae &7- &5Transmutation"));
+                new CustomItemStack(Material.ENCHANTING_TABLE, "&6炼金术自传 &7- &5演变"));
 
         public static final ItemGroup INFUSIONS = new SubGroup(
                 "av_infusions",
-                new CustomItemStack(Material.NETHER_STAR, "&6Alchimia Vitae &7- &dInfusion"));
+                new CustomItemStack(Material.NETHER_STAR, "&6炼金术自传 &7- &d注入"));
 
         public static final ItemGroup MAIN = new MultiGroup(
                 "alchimia_vitae",
-                new CustomItemStack(Material.TOTEM_OF_UNDYING, "&6Alchimia Vitae"),
+                new CustomItemStack(Material.TOTEM_OF_UNDYING, "&6炼金术自传"),
                 GENERAL, ALTAR_RECIPES, INFUSIONS);
 
     }
@@ -117,7 +117,7 @@ public class AlchimiaUtils {
     }
 
     public static String itemType(String type) {
-        return LCS.serialize(MM.deserialize("<blue>" + type + "<blue> (<italic>AlchimiaVitae<blue>)"));
+        return LCS.serialize(MM.deserialize("<blue>" + type + "<blue> (<italic>炼金术自传<blue>)"));
     }
     // }}}
 

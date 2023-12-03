@@ -77,12 +77,12 @@ public class TotemListener implements Listener {
         if (e.getItem() == null || !e.getItem().isSimilar(new ItemStack(Material.TOTEM_OF_UNDYING))) {
             // If the item isn't a totem, inform the player of the current number of totems
             p.sendMessage(AlchimiaUtils.format(
-                    "<green>There "
+                    "<green>图腾电池中已存储"
                     + (totems == 1
-                          ? "is 1 totem"
-                          : "are " + totems + " totems"
+                          ? " 1 个"
+                          : " " + totems + " 个"
                       )
-                    + " stored in the Battery of Totems."
+                    + "图腾."
                 )
             );
 
@@ -92,7 +92,7 @@ public class TotemListener implements Listener {
 
         // Check if there are already 8 totems
         if (totems > 7) {
-            p.sendMessage(AlchimiaUtils.format("<red>There is no more space for this totem!"));
+            p.sendMessage(AlchimiaUtils.format("<red>不死图腾已满!"));
             p.getWorld().playSound(p.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1F, 1F);
             return;
         }
@@ -112,14 +112,14 @@ public class TotemListener implements Listener {
         p.getInventory().getChestplate().setItemMeta(meta);
 
         // Inform the player of the new number of totems
-        p.sendMessage(AlchimiaUtils.format("<green>Your totem has been added to the Battery of Totems."));
+        p.sendMessage(AlchimiaUtils.format("<green>不死图腾已添加到图腾电池中."));
         p.sendMessage(AlchimiaUtils.format(
-                "<green>There "
+                "<green>图腾电池中已存储"
                 + (totems == 1
-                      ? "is now 1 totem"
-                      : "are now " + totems + " totems"
+                      ? "1 个"
+                      : " " + totems + " 个"
                   )
-                + " stored."
+                + " 图腾."
             )
         );
 
@@ -203,12 +203,12 @@ public class TotemListener implements Listener {
         };
 
         p.sendMessage(AlchimiaUtils.format(
-                color + "There "
+                color + "图腾电池中"
                 + (totems == 1
-                      ? "is 1 totem"
-                      : "are " + (totems == 0 ? "no" : totems) + " totems"
+                      ? "剩余 1 个"
+                      : (totems == 0 ? "没有" : "还有" + totems + "个") + " 剩余"
                   )
-                + " left in the Battery of Totems."
+                + " 图腾."
             )
         );
 

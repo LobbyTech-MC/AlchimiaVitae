@@ -16,7 +16,6 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-
 import me.apeiros.alchimiavitae.AlchimiaUtils;
 import me.apeiros.alchimiavitae.AlchimiaVitae;
 import me.apeiros.alchimiavitae.setup.AlchimiaItems;

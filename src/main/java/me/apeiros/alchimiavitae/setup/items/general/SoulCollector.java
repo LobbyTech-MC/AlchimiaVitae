@@ -15,7 +15,6 @@ import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.handlers.EntityKillHandler;
 import io.github.thebusybiscuit.slimefun4.core.handlers.WeaponUseHandler;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
-
 import me.apeiros.alchimiavitae.AlchimiaUtils;
 import me.apeiros.alchimiavitae.setup.AlchimiaItems;
 

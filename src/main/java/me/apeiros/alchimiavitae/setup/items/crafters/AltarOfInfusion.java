@@ -27,7 +27,6 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-
 import me.apeiros.alchimiavitae.AlchimiaUtils;
 import me.apeiros.alchimiavitae.AlchimiaVitae;
 import me.apeiros.alchimiavitae.setup.AlchimiaItems;

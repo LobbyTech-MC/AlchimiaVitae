@@ -8,7 +8,6 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-
 import me.apeiros.alchimiavitae.AlchimiaVitae;
 import me.apeiros.alchimiavitae.setup.items.crafters.CosmicCauldron;
 

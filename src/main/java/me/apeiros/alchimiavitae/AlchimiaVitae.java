@@ -2,7 +2,6 @@ package me.apeiros.alchimiavitae;
 
 import io.github.mooy1.infinitylib.core.AbstractAddon;
 import io.github.mooy1.infinitylib.metrics.bukkit.Metrics;
-
 import me.apeiros.alchimiavitae.setup.Setup;
 
 /**

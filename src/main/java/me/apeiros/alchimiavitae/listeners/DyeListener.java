@@ -6,7 +6,6 @@ import org.bukkit.event.entity.SheepDyeWoolEvent;
 import org.bukkit.inventory.PlayerInventory;
 
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-
 import me.apeiros.alchimiavitae.AlchimiaVitae;
 import me.apeiros.alchimiavitae.setup.AlchimiaItems;
 

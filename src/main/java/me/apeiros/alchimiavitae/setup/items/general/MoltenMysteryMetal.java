@@ -10,7 +10,6 @@ import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
-
 import me.apeiros.alchimiavitae.AlchimiaUtils;
 import me.apeiros.alchimiavitae.setup.AlchimiaItems;
 import me.apeiros.alchimiavitae.setup.items.crafters.DivineAltar;

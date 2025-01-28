@@ -35,7 +35,7 @@ public class CosmicCauldron extends AbstractCrafter<SlimefunItemStack> {
     @Override
     protected void newInstanceEffects(World w, Location l) {
         // Play effects
-        w.spawnParticle(Particle.TOTEM, l, 100, 3, 3, 3);
+        w.spawnParticle(Particle.TOTEM_OF_UNDYING, l, 100, 3, 3, 3);
         w.playSound(l, Sound.BLOCK_BEACON_ACTIVATE, 1F, 1F);
     }
     // }}}
@@ -57,7 +57,7 @@ public class CosmicCauldron extends AbstractCrafter<SlimefunItemStack> {
                 if (layer == 4) {
                     // Pre-craft
                     w.playSound(l, Sound.ENTITY_ILLUSIONER_PREPARE_BLINDNESS, 1, 1);
-                    w.spawnParticle(Particle.SPELL_WITCH, l, 2, 1, 1, 1);
+                    w.spawnParticle(Particle.WITCH, l, 2, 1, 1, 1);
 
                     // Decrease layer
                     layer--;
@@ -65,7 +65,7 @@ public class CosmicCauldron extends AbstractCrafter<SlimefunItemStack> {
                     // Pre-craft
                     w.playSound(l, Sound.BLOCK_BREWING_STAND_BREW, 1, 1);
                     w.playSound(l, Sound.ITEM_LODESTONE_COMPASS_LOCK, 1, 1);
-                    w.spawnParticle(Particle.CRIT_MAGIC, l, 200, 1, 1, 1);
+                    w.spawnParticle(Particle.CRIT, l, 200, 1, 1, 1);
 
                     // Decrease layer
                     layer--;

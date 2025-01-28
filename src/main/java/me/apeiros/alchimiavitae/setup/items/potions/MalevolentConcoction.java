@@ -13,7 +13,6 @@ import org.bukkit.event.entity.ProjectileLaunchEvent;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-
 import me.apeiros.alchimiavitae.AlchimiaUtils;
 import me.apeiros.alchimiavitae.setup.AlchimiaItems;
 import me.apeiros.alchimiavitae.setup.items.crafters.CosmicCauldron;
@@ -47,7 +46,7 @@ public class MalevolentConcoction extends AbstractListenerPotion {
         World w = potion.getWorld();
         Location l = potion.getLocation();
 
-        w.spawnParticle(Particle.SPELL_WITCH, l, 75, 1, 1, 1);
+        w.spawnParticle(Particle.WITCH, l, 75, 1, 1, 1);
         w.playSound(l, Sound.ENTITY_EVOKER_PREPARE_SUMMON, 0.4F, 1);
         w.playSound(l, Sound.BLOCK_BEACON_POWER_SELECT, 1, 1);
     }
@@ -66,7 +65,7 @@ public class MalevolentConcoction extends AbstractListenerPotion {
         World w = potion.getWorld();
         Location l = potion.getLocation();
 
-        w.spawnParticle(Particle.SPELL_WITCH, l, 75, 1, 1, 1);
+        w.spawnParticle(Particle.WITCH, l, 75, 1, 1, 1);
         w.spawnParticle(Particle.WARPED_SPORE, l, 200, 3, 1, 3);
         w.playSound(l, Sound.ENTITY_EVOKER_PREPARE_ATTACK, 1, 1);
         w.playSound(l, Sound.BLOCK_BEACON_DEACTIVATE, 1, 1);

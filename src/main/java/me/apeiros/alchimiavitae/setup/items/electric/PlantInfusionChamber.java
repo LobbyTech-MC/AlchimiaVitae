@@ -9,7 +9,6 @@ import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
-
 import me.apeiros.alchimiavitae.setup.AlchimiaItems;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 
@@ -54,7 +53,7 @@ public class PlantInfusionChamber extends AContainer implements RecipeDisplayIte
     // {{{ Other
     @Override
     public ItemStack getProgressBar() {
-        return new ItemStack(Material.GRASS);
+        return new ItemStack(Material.SHORT_GRASS);
     }
 
     @Nonnull

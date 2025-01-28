@@ -23,7 +23,6 @@ import org.bukkit.util.Vector;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.ProtectionManager;
-
 import me.apeiros.alchimiavitae.AlchimiaVitae;
 import me.apeiros.alchimiavitae.setup.items.crafters.AltarOfInfusion.Infusion;
 
@@ -110,7 +109,7 @@ public class RangedWeaponListener implements Listener {
             e.getProjectile().setVelocity(e.getProjectile().getVelocity().multiply(2));
 
             // Effects
-            w.spawnParticle(Particle.CRIT_MAGIC, l, 25);
+            w.spawnParticle(Particle.CRIT, l, 25);
             w.playSound(l, Sound.BLOCK_RESPAWN_ANCHOR_DEPLETE, 1F, 1F);
         }
         // }}}
@@ -181,8 +180,8 @@ public class RangedWeaponListener implements Listener {
         e.setCancelled(true);
 
         // Heal entity
-        entity.addPotionEffect(new PotionEffect(PotionEffectType.HEAL, 1, (int) Math.floor(arrow.getDamage() / 5)));
-        entity.getWorld().spawnParticle(Particle.TOTEM, entity.getLocation(), 20, 1, 1, 1);
+        entity.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 1, (int) Math.floor(arrow.getDamage() / 5)));
+        entity.getWorld().spawnParticle(Particle.TOTEM_OF_UNDYING, entity.getLocation(), 20, 1, 1, 1);
 
         // Remove arrow
         arrow.remove();

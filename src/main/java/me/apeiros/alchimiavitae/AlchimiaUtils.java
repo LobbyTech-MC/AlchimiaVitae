@@ -5,19 +5,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import lombok.experimental.UtilityClass;
-
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-
-import net.kyori.adventure.text.minimessage.MiniMessage;
-import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
-import net.kyori.adventure.text.minimessage.tag.standard.StandardTags;
-import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 
 import io.github.mooy1.infinitylib.core.AbstractAddon;
 import io.github.mooy1.infinitylib.groups.MultiGroup;
@@ -26,8 +19,12 @@ import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-
+import lombok.experimental.UtilityClass;
 import me.apeiros.alchimiavitae.setup.AlchimiaItems;
+import net.kyori.adventure.text.minimessage.MiniMessage;
+import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
+import net.kyori.adventure.text.minimessage.tag.standard.StandardTags;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 
 /**
  * Holds utility classes and methods of {@link AlchimiaVitae}

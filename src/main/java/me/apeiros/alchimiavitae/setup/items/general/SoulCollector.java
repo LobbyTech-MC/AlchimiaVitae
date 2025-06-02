@@ -37,7 +37,7 @@ public class SoulCollector extends SlimefunItem {
 
             // The Soul Collector cannot be used on players
             e.setCancelled(true);
-            p.sendMessage(AlchimiaUtils.format("<red>You cannot hurt a player using the Soul Collector!"));
+            p.sendMessage(AlchimiaUtils.format("<red>你不能用灵魂收割者伤害其他人!"));
             p.playSound(p.getLocation(), Sound.BLOCK_GLASS_BREAK, 1, 1);
         };
     }

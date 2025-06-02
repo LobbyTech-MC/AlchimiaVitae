@@ -203,8 +203,8 @@ public class AlchimiaItems {
 
     public static final SlimefunItemStack MYSTERY_METAL = new SlimefunItemStack("AV_MYSTERY_METAL",
             Material.IRON_INGOT,
-            AlchimiaUtils.format("<gradient:#ff6745:#ff5555>Mystery Metal Ingot</gradient>"),
-            "&6Contains many metals",
+            AlchimiaUtils.format("<gradient:#ff6745:#ff5555>神秘金属锭</gradient>"),
+            "&6含有多种金属",
             "", AlchimiaUtils.itemType("衍生资源"));
     // }}}
 

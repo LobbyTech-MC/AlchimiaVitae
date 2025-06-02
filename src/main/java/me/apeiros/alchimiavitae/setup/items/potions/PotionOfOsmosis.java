@@ -63,10 +63,10 @@ public class PotionOfOsmosis extends AbstractListenerPotion {
         // Make a new potion
         ItemStack newPotion = AlchimiaUtils.makePotion(
                 "AV_CORUSCATING_POTION",
-                AlchimiaUtils.format("<gradient:#6fe3e1:#53e6a6>Coruscating Potion</gradient>"),
+                AlchimiaUtils.format("<gradient:#6fe3e1:#53e6a6>闪耀药水</gradient>"),
                 Color.FUCHSIA, effects, false,
-                "&aCreated from a",
-                AlchimiaUtils.format("<gradient:#6274e7:#8752a3>Potion of Osmosis</gradient>"),
+                "&a酿造于",
+                AlchimiaUtils.format("<gradient:#6274e7:#8752a3>渗透药水</gradient>"),
                 "", AlchimiaUtils.itemType("Potion"));
 
         // {{{ Finish

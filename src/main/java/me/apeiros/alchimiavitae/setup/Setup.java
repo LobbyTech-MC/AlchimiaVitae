@@ -59,10 +59,9 @@ public class Setup {
 
         CustomItemStack condensedSoulRecipeItem = new CustomItemStack(
                 Material.DROWNED_SPAWN_EGG,
-                "&b任何怪物",
-                "&7凋零骷髅",
-                "&7或凋零被击杀后",
-                "&7有几率掉落更多灵魂...");
+                "&b任何生物",
+                "&7凋灵骷髅与凋灵",
+                "&7有几率掉落更多魂...");
 
         new SlimefunItem(AlchimiaUtils.ItemGroups.GENERAL, AlchimiaItems.CONDENSED_SOUL, AlchimiaUtils.RecipeTypes.SOUL_COLLECTOR, new ItemStack[] {
                 null, null, null,
@@ -172,22 +171,22 @@ public class Setup {
     // {{{ Researches
     private static void setupResearches(AlchimiaVitae instance) {
         new Research(AbstractAddon.createKey("soul"), 131072,
-                "破坏轮回", 15)
+                "操纵生命能量", 15)
                 .addItems(AlchimiaItems.CONDENSED_SOUL, AlchimiaItems.SOUL_COLLECTOR)
                 .register();
 
         new Research(AbstractAddon.createKey("magic_plants"), 131073,
-                "两极对立", 20)
+                "强力植物", 20)
                 .addItems(AlchimiaItems.PLANT_INFUSION_CHAMBER, AlchimiaItems.LIGHT_MAGIC_PLANT, AlchimiaItems.DARK_MAGIC_PLANT)
                 .register();
 
         new Research(AbstractAddon.createKey("magic_essence"), 131074,
-                "需要打磨", 10)
+                "强力精华", 10)
                 .addItems(AlchimiaItems.LIGHT_ESSENCE, AlchimiaItems.DARK_ESSENCE)
                 .register();
 
         new Research(AbstractAddon.createKey("exp_crystals"), 131075,
-                "晶化经验", 12)
+                "纯粹的晶体能量", 12)
                 .addItems(AlchimiaItems.EXP_CRYSTALLIZER, AlchimiaItems.EXP_CRYSTAL)
                 .register();
 
@@ -207,7 +206,7 @@ public class Setup {
                 .register();
 
         new Research(AbstractAddon.createKey("cosmic_cauldron"), 131079,
-                "酿造高级药水的装置", 36)
+                "高级酿造", 36)
                 .addItems(AlchimiaItems.COSMIC_CAULDRON)
                 .register();
 
@@ -222,12 +221,12 @@ public class Setup {
                 .register();
 
         new Research(AbstractAddon.createKey("malevolent_concoction"), 131082,
-                "带有轻微腐蚀的物质", 20)
+                "恶魔液体", 20)
                 .addItems(AlchimiaItems.MALEVOLENT_CONCOCTION)
                 .register();
 
         new Research(AbstractAddon.createKey("altar_of_infusion"), 131083,
-                "终极祭坛", 36)
+                "注入", 36)
                 .addItems(AlchimiaItems.ALTAR_OF_INFUSION)
                 .register();
     }

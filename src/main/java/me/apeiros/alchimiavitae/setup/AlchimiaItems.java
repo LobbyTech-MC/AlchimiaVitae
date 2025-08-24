@@ -41,14 +41,13 @@ public class AlchimiaItems {
 
     // {{{ Tools
     public static final SlimefunItemStack SOUL_COLLECTOR = new SlimefunItemStack("AV_SOUL_COLLECTOR",
-            Material.DIAMOND_SWORD, AlchimiaUtils.format("<gradient:#6baefa:#7145b0>灵魂收割者</gradient>"),
+            Material.DIAMOND_SWORD, AlchimiaUtils.format("<gradient:#6baefa:#7145b0>灵魂收集者</gradient>"),
             "&b收集灵魂",
-            "&b使用这把剑击杀任何生物",
-            "&b将收集该生物的灵魂",
-            "&a可获得3倍经验掉落",
-            "&9凋灵类生物将掉落",
-            "&9更多灵魂",
-            "&c无法对玩家造成伤害",
+            "&b使用这把剑击杀任何生物，",
+            "&b将收集该生物的灵魂。",
+            "&a可获得3倍经验掉落。",
+            "&9凋灵类生物将掉落更多灵魂。",
+            "&c无法对玩家造成伤害。",
             "", AlchimiaUtils.itemType("工具"));
 
     static {
@@ -62,8 +61,8 @@ public class AlchimiaItems {
 
     // {{{ Machines
     public static final SlimefunItemStack PLANT_INFUSION_CHAMBER = new SlimefunItemStack("AV_PLANT_INFUSION_CHAMBER",
-    		Material.LIME_STAINED_GLASS, AlchimiaUtils.format("<gradient:#6baefa:#7145b0>植物注入仓</gradient>"),
-    		"&b可使用灵魂向植物注入暗能量",
+            Material.LIME_STAINED_GLASS, AlchimiaUtils.format("<gradient:#549c64:#1de078>植物注入仓</gradient>"),
+            "&b可使用灵魂向植物注入暗能量",
             "&b或使用魔法结晶向植物注入光能量", "",
             LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
             LoreBuilder.speed(1),
@@ -73,8 +72,8 @@ public class AlchimiaItems {
     public static final SlimefunItemStack EXP_CRYSTALLIZER = new SlimefunItemStack("AV_EXP_CRYSTALLIZER",
             Material.LIME_STAINED_GLASS,
             AlchimiaUtils.format("<gradient:#50fa75:#3dd2ff>经验结晶器</gradient>"),
-            "&a将经验球转化为晶体形态",
-            "&a耐用且充满活力", "",
+            "&a将经验球转化为晶体形态，",
+            "&a耐用且充满活力。", "",
             LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
             LoreBuilder.speed(1),
             LoreBuilder.powerPerSecond(32),
@@ -85,8 +84,8 @@ public class AlchimiaItems {
     public static final SlimefunItemStack CONDENSED_SOUL = new SlimefunItemStack("AV_CONDENSED_SOUL",
             Material.LIGHT_BLUE_DYE, AlchimiaUtils.format("<gradient:#6baefa:#7145b0>凝魂</gradient>"),
             "&b凝聚成球的灵魂",
-            "&9&o也许有方法可以",
-            "&9&o操控它的力量...",
+            "&9&o也许有方法",
+            "&9&o能操控它的力量...",
             "", AlchimiaUtils.itemType("基础魔法资源"));
 
     static {
@@ -100,9 +99,7 @@ public class AlchimiaItems {
     public static final SlimefunItemStack LIGHT_MAGIC_PLANT = new SlimefunItemStack("AV_GOOD_MAGIC_PLANT",
             Material.OAK_SAPLING,
             AlchimiaUtils.format("<gradient:#2ddae0:#31f876>光魔法植物</gradient>"),
-            "&7光魔法 I",
-            "&a发散着至高无上,",
-            "&a与众不同的光芒...",
+            "&a发散着至高无上的光芒。",
             "", AlchimiaUtils.itemType("基础魔法资源"));
 
     static {
@@ -116,9 +113,8 @@ public class AlchimiaItems {
     public static final SlimefunItemStack DARK_MAGIC_PLANT = new SlimefunItemStack("AV_EVIL_MAGIC_PLANT",
             Material.OAK_SAPLING,
             AlchimiaUtils.format("<gradient:#ff5555:#ffa012>暗魔法植物</gradient>"),
-            "&7暗魔法 I",
-            "&c在它的木质中封印了",
-            "&c无数的暗魔法...",
+            "&c吸收了太多的光能",
+            "&c而不再能进行光合作用...",
             "", AlchimiaUtils.itemType("基础魔法资源"));
 
     static {
@@ -131,9 +127,8 @@ public class AlchimiaItems {
 
     public static final SlimefunItemStack EXP_CRYSTAL = new SlimefunItemStack("AV_EXP_CRYSTAL",
             Material.EMERALD,
-            AlchimiaUtils.format("<gradient:#50fa75:#3dd2ff>经验结晶器</gradient>"),
-            "&a将经验球转化为晶体形态",
-            "&a耐用且充满活力",
+            AlchimiaUtils.format("<gradient:#50fa75:#3dd2ff>经验水晶</gradient>"),
+            "&a结晶的经验。",
             "", AlchimiaUtils.itemType("基础魔法资源"));
 
     static {
@@ -146,23 +141,22 @@ public class AlchimiaItems {
 
     public static final SlimefunItemStack LIGHT_ESSENCE = new SlimefunItemStack("AV_GOOD_ESSENCE",
             Material.SUGAR,
-            AlchimiaUtils.format("<gradient:#2ddae0:#31f876>光之精华</gradient>"),
-            "&7光魔法 II",
-            "&a生命与光明",
-            "", AlchimiaUtils.itemType("初加工的魔法资源"));
+            AlchimiaUtils.format("<gradient:#2ddae0:#31f876>光精华</gradient>"),
+            "&a发出脉冲荧光。",
+            "", AlchimiaUtils.itemType("精炼魔法资源"));
 
     public static final SlimefunItemStack DARK_ESSENCE = new SlimefunItemStack("AV_EVIL_ESSENCE",
             Material.GUNPOWDER,
-            AlchimiaUtils.format("<gradient:#ff5555:#ffa012>暗之精华</gradient>"),
-            "&7暗魔法 II",
-            "&c死亡与黑暗",
-            "", AlchimiaUtils.itemType("初加工的魔法资源"));
+            AlchimiaUtils.format("<gradient:#ff5555:#ffa012>暗精华</gradient>"),
+            "&c可以像海绵吸水",
+            "&c一样吸收光能。",
+            "", AlchimiaUtils.itemType("精炼魔法资源"));
 
     public static final SlimefunItemStack ILLUMIUM = new SlimefunItemStack("AV_ILLUMIUM",
             Material.IRON_INGOT,
             AlchimiaUtils.format("<gradient:#2ddae0:#31f876>光明锭</gradient>"),
-            "&a它在你手中散发着强力的光芒",
-            "", AlchimiaUtils.itemType("浓缩的魔法资源"));
+            "&a它在你手中散发着强力的光芒。",
+            "", AlchimiaUtils.itemType("浓缩魔法资源"));
 
     static {
         ItemMeta meta = ILLUMIUM.getItemMeta();
@@ -175,8 +169,8 @@ public class AlchimiaItems {
     public static final SlimefunItemStack DARKSTEEL = new SlimefunItemStack("AV_DARKSTEEL",
             Material.NETHERITE_INGOT,
             AlchimiaUtils.format("<gradient:#ff5555:#ffa012>暗钢锭</gradient>"),
-            "&c它在散发着...无尽的黑暗?",
-            "", AlchimiaUtils.itemType("浓缩的魔法资源"));
+            "&c它在散发着...无尽的黑暗？",
+            "", AlchimiaUtils.itemType("浓缩魔法资源"));
 
     static {
         ItemMeta meta = DARKSTEEL.getItemMeta();
@@ -192,7 +186,7 @@ public class AlchimiaItems {
             Material.ENCHANTING_TABLE,
             AlchimiaUtils.format("<gradient:#ff5555:#ff6cfd>神圣祭坛</gradient>"),
             "&5用于进行古代仪式的",
-            "&5神圣装置",
+            "&5神圣装置。",
             "", AlchimiaUtils.itemType("祭坛"));
 
     public static final SlimefunItemStack MOLTEN_MYSTERY_METAL = new SlimefunItemStack("AV_MOLTEN_MYSTERY_METAL",
@@ -211,8 +205,8 @@ public class AlchimiaItems {
     // {{{ Cosmic Cauldron (Potions)
     public static final SlimefunItemStack COSMIC_CAULDRON = new SlimefunItemStack("AV_ORNATE_CAULDRON",
             Material.CAULDRON,
-            AlchimiaUtils.format("<gradient:#57ebbe:#f6fa2a>华丽炼药锅</gradient>"),
-            "&2用于酿造药水的高级炼药锅",
+            AlchimiaUtils.format("<gradient:#57ebbe:#f6fa2a>宇宙炼药锅</gradient>"),
+            "&2用于酿造高级药水的祭坛。",
             "", AlchimiaUtils.itemType("祭坛"));
 
     private static final Map<PotionEffectType, int[]> potEffectsMap = new HashMap<>();
@@ -221,8 +215,8 @@ public class AlchimiaItems {
             "AV_POTION_OF_OSMOSIS",
             AlchimiaUtils.format("<gradient:#6274e7:#8752a3>渗透药水</gradient>"),
             Color.SILVER, potEffectsMap, false,
-            "&e右键点击&6吸收你身上的所有药水效果",
-            "&6并将它们储存在药水瓶中",
+            "&e右键点击&6吸收身上的",
+            "&6所有药水效果并存于瓶中。",
             "", AlchimiaUtils.itemType("药水"));
 
     private static final Configuration cfg = AlchimiaVitae.i().getConfig();
@@ -294,10 +288,9 @@ public class AlchimiaItems {
     // {{{ Altar of Infusion (Infusion)
     public static final SlimefunItemStack ALTAR_OF_INFUSION = new SlimefunItemStack("AV_ALTAR_OF_INFUSION",
             Material.LODESTONE, AlchimiaUtils.format("<gradient:#f78770:#ff607b>注入祭坛</gradient>"),
-            "&5结合了科技与巫术的祭坛",
-            "&5可以向物品注入强大的属性",
-            "&d仅能注入金、铁、钻石、下界合金装备",
-            "&d以及钓竿、弓、弩",
+            "&5为装备增加效果。", "",
+            "&7仅能注入金、铁、钻石、下界合金装备，",
+            "&7还包括钓鱼竿、弓、弩。",
             "", AlchimiaUtils.itemType("祭坛"));
     // }}}
 

@@ -196,7 +196,7 @@ abstract class AbstractCrafter<T> extends CraftingBlock {
 
         // Invalid recipe
         if (item == null) {
-            p.sendMessage(AlchimiaUtils.format("<red>配方不存在!"));
+            p.sendMessage(AlchimiaUtils.format("<red>无效的配方！"));
             return;
         }
 

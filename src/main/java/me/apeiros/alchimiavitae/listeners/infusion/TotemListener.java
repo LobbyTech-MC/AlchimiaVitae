@@ -77,12 +77,7 @@ public class TotemListener implements Listener {
         if (e.getItem() == null || !e.getItem().isSimilar(new ItemStack(Material.TOTEM_OF_UNDYING))) {
             // If the item isn't a totem, inform the player of the current number of totems
             p.sendMessage(AlchimiaUtils.format(
-                    "<green>图腾电池中已存储"
-                    + (totems == 1
-                          ? " 1 个"
-                          : " " + totems + " 个"
-                      )
-                    + "图腾."
+                    "<green>图腾电池存储了" + totems + "个不死图腾。"
                 )
             );
 
@@ -92,16 +87,12 @@ public class TotemListener implements Listener {
 
         // Check if there are already 8 totems
         if (totems > 7) {
-            p.sendMessage(AlchimiaUtils.format("<red>不死图腾已满!"));
+            p.sendMessage(AlchimiaUtils.format("<red>图腾电池没有多余的空间了！"));
             p.getWorld().playSound(p.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1F, 1F);
             return;
         }
 
-        ItemStack mainHand = p.getInventory().getItemInMainHand();
-
-        // This should never happen
         if (mainHand.getType() != Material.TOTEM_OF_UNDYING)
-            return;
 
         // Remove the totem in the hand
         mainHand.setAmount(0);
@@ -112,14 +103,9 @@ public class TotemListener implements Listener {
         p.getInventory().getChestplate().setItemMeta(meta);
 
         // Inform the player of the new number of totems
-        p.sendMessage(AlchimiaUtils.format("<green>不死图腾已添加到图腾电池中."));
+        p.sendMessage(AlchimiaUtils.format("<green>图腾已被存储至图腾电池中。"));
         p.sendMessage(AlchimiaUtils.format(
-                "<green>图腾电池中已存储"
-                + (totems == 1
-                      ? "1 个"
-                      : " " + totems + " 个"
-                  )
-                + " 图腾."
+            "<green>图腾电池存储了" + totems + "个不死图腾。"
             )
         );
 
@@ -203,19 +189,9 @@ public class TotemListener implements Listener {
         };
 
         p.sendMessage(AlchimiaUtils.format(
-                color + "图腾电池中"
-                + (totems == 1
-                      ? "剩余 1 个"
-                      : (totems == 0 ? "没有" : "还有" + totems + "个") + " 剩余"
-                  )
-                + " 图腾."
+                color + "图腾电池存储了" + totems + "个不死图腾。"
             )
         );
 
         // Effects
         p.playEffect(EntityEffect.TOTEM_RESURRECT);
-        p.getWorld().playSound(p.getLocation(), Sound.BLOCK_BEACON_DEACTIVATE, 0.5F, 1F);
-    }
-    // }}}
-
-}

@@ -78,11 +78,14 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
         boolean knockbackEnabled        = cfg.getBoolean("options.infusions.infusion-knockback");
 
         // Create placeholder items
-        CustomItemStack validMelee      = new CustomItemStack(Material.DIAMOND_SWORD, "&a&o一把金、铁、钻石", "&a&o或下界合金制的剑或斧头");
-        CustomItemStack validRanged     = new CustomItemStack(Material.BOW, "&a&o一把弓或弩");
-        CustomItemStack validHoe        = new CustomItemStack(Material.DIAMOND_HOE, "&a&o一把金、铁、钻石,", "&a&o或下界合金制的锄头");
-        CustomItemStack validChestplate = new CustomItemStack(Material.DIAMOND_CHESTPLATE, "&a&o一把金、铁、钻石或", "&a&o下界合金制的胸甲");
-        CustomItemStack validFishingRod = new CustomItemStack(Material.FISHING_ROD, "&a&o一把钓鱼竿");
+        CustomItemStack validMelee      = new CustomItemStack(Material.DIAMOND_SWORD, "&a&o一把斧头或剑, ",
+            "&a&o可以是金、铁、钻石材质的。");
+        CustomItemStack validRanged     = new CustomItemStack(Material.BOW, "&a&o一把弓或弩。");
+        CustomItemStack validHoe        = new CustomItemStack(Material.DIAMOND_HOE, "&a&o一把锄头，",
+            "&a&o可以是金、铁、钻石材质的。");
+        CustomItemStack validChestplate = new CustomItemStack(Material.DIAMOND_CHESTPLATE, "&a&o一件胸甲，",
+            "&a&o可以是金、铁、钻石、下界合金材质的。");
+        CustomItemStack validFishingRod = new CustomItemStack(Material.FISHING_ROD, "&a&o一把钓竿。");
 
         // Get ItemGroup and RecipeType
         ItemGroup ig = AlchimiaUtils.ItemGroups.INFUSIONS;
@@ -260,7 +263,7 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
 
         // Make sure the recipe is valid
         if (infusion == null) {
-            p.sendMessage(AlchimiaUtils.format("<red>配方不存在!"));
+            p.sendMessage(AlchimiaUtils.format("<red>无效的注入配方！"));
             return;
         }
         // }}}
@@ -272,13 +275,13 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
 
         // Make sure there is a tool
         if (tool == null || meta == null || tool.getType().equals(Material.AIR)) {
-            p.sendMessage(AlchimiaUtils.format("<red>无效的注入!"));
+            p.sendMessage(AlchimiaUtils.format("<red>没有物品可以注入！"));
             return;
         }
 
         // Make sure the tool is valid
         if (!Infusion.ANY.canApply(tool)) {
-            p.sendMessage(AlchimiaUtils.format("<red>你不能注入该物品!"));
+            p.sendMessage(AlchimiaUtils.format("<red>你不能注入该物品！"));
             return;
         }
 
@@ -286,13 +289,13 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
 
         // Make sure the tool is not already infused
         if (Infusion.ANY.has(pdc)) {
-            p.sendMessage(AlchimiaUtils.format("<red>这个物品已经有注入了!"));
+            p.sendMessage(AlchimiaUtils.format("<red>该物品已有注入！"));
             return;
         }
 
         // Make sure the infusion is applicable to the tool
         if (!infusion.canApply(tool)) {
-            p.sendMessage(AlchimiaUtils.format("<red>你不能把它注入到这个物品!"));
+            p.sendMessage(AlchimiaUtils.format("<red>你不能向物品应用该注入！"));
             return;
         }
         // }}}
@@ -304,7 +307,7 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
         List<String> lore = meta.getLore() != null ? meta.getLore() : new ArrayList<>();
 
         lore.add("");
-        lore.add(AlchimiaUtils.format("<gray>注入:"));
+        lore.add(AlchimiaUtils.format("<gray>注入："));
 
         // Infusion name to lore
         lore.add(AlchimiaUtils.format("<dark_gray>› " + infusion.lore()));
@@ -403,19 +406,15 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
                 "<red><bold>毁灭暴击",
 
                 new SlimefunItemStack("AV_DESTRUCTIVE_CRITS_INFUSION", Material.TNT, "&c&l毁灭暴击",
-                		"&4暴击时:",
-                        "&4- 有 1/20 的几率使目标获得 8 秒挖掘疲劳 III 效果",
-                        "&4- 有 1/5 的几率使目标获得 15 秒缓慢 I 效果",
-                        "&4- 有 1/5 的几率使目标获得 15 秒虚弱 I 效果",
-                        "&4- 对目标的护甲造成额外 0-5 点伤害")),
+                        "&4暴击时有小概率给你的对手施加",
+                        "&4负面效果，并对护甲造成额外伤害。")),
 
         PHANTOM_CRITS (
                 "infusion_phantomcrits",
                 "<aqua>幻影暴击",
 
                 new SlimefunItemStack("AV_PHANTOM_CRITS_INFUSION", Material.PHANTOM_MEMBRANE, "&b幻影暴击",
-                        "&7暴击时,有小概率造成",
-                        "&7额外伤害,无视护甲")),
+                        "&7暴击时有小概率造成无视护甲的额外伤害。")),
         // }}}
 
         // {{{ Ranged weapons
@@ -424,66 +423,57 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
                 "<dark_green>强力",
 
                 new SlimefunItemStack("AV_FORCEFUL_INFUSION", Material.PISTON, "&2强力",
-                		"&a该注入魔法将使用机械设备与电磁铁",
-                        "&a来加速弹射物",
-                        "&a箭矢将获得2倍射程与额外伤害")),
+                        "&2可以射出更远且伤害更高的箭。")),
 
         HEALING(
                 "infusion_healing",
                 "<red>治疗",
 
                 new SlimefunItemStack("AV_HEALING_INFUSION", Material.REDSTONE, "&c治疗",
-                		"&c该注入魔法可以治疗目标",
-                        "&c且不会造成伤害",
-                        "&a治疗量与伤害相同")),
+                        "&c命中目标时将进行治疗。")),
 
         TRUE_AIM(
                 "infusion_trueaim",
-                "<light_purple>自瞄",
+                "<light_purple>真正的瞄准",
 
-                new SlimefunItemStack("AV_TRUE_AIM_INFUSION", Material.SHULKER_SHELL, "&d自瞄",
-                		"&5使用来自潜影壳的漂浮魔法",
-                        "&5来处决目标",
-                        "&5注入该魔法的弓将射出",
-                        "&5不受重力影响的箭矢")),
+                new SlimefunItemStack("AV_TRUE_AIM_INFUSION", Material.SHULKER_SHELL, "&d真正的瞄准",
+                        "&5可以射出不受重力影响的箭。")),
 
         VOLATILITY(
                 "infusion_volatile",
-                "<dark_red><bold>Volatility",
+                "<dark_red><bold>挥发",
 
-                new SlimefunItemStack("AV_VOLATILE_INFUSION", Material.FIRE_CHARGE, "&4&lVolatility",
-                        "&cGrants the ability to shoot fireballs")),
+                new SlimefunItemStack("AV_VOLATILE_INFUSION", Material.FIRE_CHARGE, "&4&l挥发",
+                        "&c可以发射火球。")),
         // }}}
 
         // {{{ Chestplate
         TOTEM_BATTERY(
                 "infusion_totemstorage",
-                "<gold><bold>Battery of Totems",
+                "<gold><bold>图腾电池",
 
-                new SlimefunItemStack("AV_TOTEM_BATTERY_INFUSION", Material.TOTEM_OF_UNDYING, "&6&lTotem Battery",
-                        "&6Stores up to 8 Totems of Undying which will resurrect you",
-                        "&eStore a totem by &7&lShift-Right-Clicking &ewhile holding",
-                        "&eone and while an infused chestplate is worn")),
+                new SlimefunItemStack("AV_TOTEM_BATTERY_INFUSION", Material.TOTEM_OF_UNDYING, "&6&l图腾电池",
+                        "&6最多可以存储8个不死图腾。",
+                        "&e手持不死图腾并&7&lShift+右键点击&e",
+                        "&e以存入。")),
         // }}}
 
         // {{{ Fishing rod
         KNOCKBACK(
                 "infusion_knockback",
-                "<green>Knockback",
+                "<green>击退",
 
-                new SlimefunItemStack("AV_KNOCKBACK_INFUSION", Material.SLIME_BALL, "&aKnockback",
-                        "&aPushes targets away instead",
-                        "&aof pulling them towards you")),
+                new SlimefunItemStack("AV_KNOCKBACK_INFUSION", Material.SLIME_BALL, "&a击退",
+                        "&a将目标击退而不是拉近。")),
         // }}}
 
         // {{{ Hoe
         AUTO_REPLANT(
                 "infusion_autoreplant",
-                "<green>Automatic Re-plant",
+                "<green>自动补种",
 
-                new SlimefunItemStack("AV_AUTO_REPLANT_INFUSION", Material.WHEAT, "&aAutomatic Re-plant",
-                        "&2Grants the ability to automatically replant",
-                        "&2fully grown crops when harvesting them")),
+                new SlimefunItemStack("AV_AUTO_REPLANT_INFUSION", Material.WHEAT, "&a自动补种",
+                        "&2收获作物时会自动补种。")),
         // }}}
 
         // Dummy value for checking if an item is infusable in general

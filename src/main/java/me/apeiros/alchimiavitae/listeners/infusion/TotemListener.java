@@ -92,7 +92,11 @@ public class TotemListener implements Listener {
             return;
         }
 
+        ItemStack mainHand = p.getInventory().getItemInMainHand();
+
+        // This should never happen
         if (mainHand.getType() != Material.TOTEM_OF_UNDYING)
+            return;
 
         // Remove the totem in the hand
         mainHand.setAmount(0);
@@ -195,3 +199,8 @@ public class TotemListener implements Listener {
 
         // Effects
         p.playEffect(EntityEffect.TOTEM_RESURRECT);
+        p.getWorld().playSound(p.getLocation(), Sound.BLOCK_BEACON_DEACTIVATE, 0.5F, 1F);
+    }
+    // }}}
+
+}

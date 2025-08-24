@@ -75,11 +75,11 @@ public class AlchimiaUtils {
 
         public static final ItemGroup GENERAL = new SubGroup(
                 "av_general",
-                new CustomItemStack(Material.ENCHANTED_BOOK, "&6炼金术自传 &7- &2普通"));
+                new CustomItemStack(Material.ENCHANTED_BOOK, "&6炼金术自传 &7- &2基础机器和资源"));
 
         public static final ItemGroup ALTAR_RECIPES = new SubGroup(
                 "av_altar_recipes",
-                new CustomItemStack(Material.ENCHANTING_TABLE, "&6炼金术自传 &7- &5演变"));
+                new CustomItemStack(Material.ENCHANTING_TABLE, "&6炼金术自传 &7- &5衍生资源"));
 
         public static final ItemGroup INFUSIONS = new SubGroup(
                 "av_infusions",

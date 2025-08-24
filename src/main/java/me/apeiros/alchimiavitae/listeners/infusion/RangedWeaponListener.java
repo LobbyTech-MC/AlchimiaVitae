@@ -23,6 +23,7 @@ import org.bukkit.util.Vector;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.ProtectionManager;
+
 import me.apeiros.alchimiavitae.AlchimiaVitae;
 import me.apeiros.alchimiavitae.setup.items.crafters.AltarOfInfusion.Infusion;
 
@@ -180,7 +181,7 @@ public class RangedWeaponListener implements Listener {
         e.setCancelled(true);
 
         // Heal entity
-        entity.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 1, (int) Math.floor(arrow.getDamage() / 5)));
+        entity.addPotionEffect(new PotionEffect(PotionEffectType.INSTANT_HEALTH, 1, (int) Math.floor(arrow.getDamage() / 5)));
         entity.getWorld().spawnParticle(Particle.TOTEM_OF_UNDYING, entity.getLocation(), 20, 1, 1, 1);
 
         // Remove arrow
